@@ -1,0 +1,20 @@
+npm create-next-app first-steps
+    ty yes
+    esl yes
+    tail yes
+    src no
+    app yes
+    alias no
+
+    npm run dev
+
+turbopack solo en dev (es beta)
+     "scripts": {
+    "dev": "next dev --turbo",
+
+instalar iconos 
+    npm install @primer/octicons-react
+    https://primer.style/foundations/icons
+
+build 
+    npm run build
