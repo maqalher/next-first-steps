@@ -18,3 +18,44 @@ instalar iconos
 
 build 
     npm run build
+
+docker
+    raiz .dockerignore
+        Dockerfile
+        .dockerignore
+        node_modules
+        npm-debug.log
+        README.md
+        .next
+        .git
+    
+    dockerfile
+        FROM node:18-alpine
+
+        WORKDIR /app
+
+        COPY package.json /
+
+        RUN npm install
+
+        COPY . /
+
+        RUN npm run build
+
+        EXPOSE 3000
+
+        CMD [ "npm", "start" ]
+
+    crear imagen
+        docker build -t nextjs-first-steps .
+
+    levantar imagen
+        docker container run -dp 3000:3000 nextjs-first-steps
+
+forma recomandada
+    nuevo dockerfile
+
+    editar next.confing.mjs
+        const nextConfig = {
+            output: "standalone",
+        };
